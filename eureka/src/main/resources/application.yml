@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: eureka
+  profiles:
+    active: stage1
+---
+spring:
+  profiles: stage1
+server:
+  port: 9000
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: stage1
+  client:
+    serviceUrl:
+      defaultZone: http://stage2:9001/eureka/
+
+---
+spring:
+  profiles: stage2
+server:
+  port: 9001
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: stage2
+  client:
+    serviceUrl:
+      defaultZone: http://stage1:9000/eureka/
