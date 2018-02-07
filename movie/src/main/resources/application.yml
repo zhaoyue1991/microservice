@@ -15,6 +15,9 @@ user:
   serviceUrl: http://localhost:8000/
 
 eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 租期更新时间，默认30s
+#    lease-expiration-duration-in-seconds: 租期到期时间，默认90s
   instance:
     prefer-ip-address: true
   client:

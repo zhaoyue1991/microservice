@@ -9,6 +9,9 @@ spring:
 server:
   port: 9000
 eureka:
+  server:
+    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 清理时间默认60 * 1000s
   instance:
     prefer-ip-address: true
     hostname: stage1
@@ -22,6 +25,9 @@ spring:
 server:
   port: 9001
 eureka:
+  server:
+    enable-self-preservation: false
+#    eviction-interval-timer-in-ms: 清理时间默认60 * 1000s
   instance:
     prefer-ip-address: true
     hostname: stage2

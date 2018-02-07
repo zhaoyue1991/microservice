@@ -22,6 +22,9 @@ logging:
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
 
 eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: 租期更新时间，默认30s
+#    lease-expiration-duration-in-seconds: 租期到期时间，默认90s
   client:
     serviceUrl:
       defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
