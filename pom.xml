@@ -9,6 +9,8 @@
     <version>1.0.0-SNAPSHOT</version>
     <modules>
         <module>eureka</module>
+        <module>user</module>
+        <module>movie</module>
     </modules>
     <packaging>pom</packaging>
     <description>微服务</description>
@@ -38,7 +40,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <dependencyManagement>

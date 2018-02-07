@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: movie
+
+server:
+  port: 8010
+
+#RestTemplate
+rest:
+  read :
+    timeout: 5000
+  connect :
+    timeout: 15000
+user:
+  serviceUrl: http://localhost:8000/
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
