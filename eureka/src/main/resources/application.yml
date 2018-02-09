@@ -3,6 +3,10 @@ spring:
     name: eureka
   profiles:
     active: stage1
+#log
+logging:
+  config: classpath:log4j2.xml
+
 ---
 spring:
   profiles: stage1

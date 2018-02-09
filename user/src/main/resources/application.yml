@@ -1,9 +1,12 @@
-server:
-  port: 8000
+#log
+logging:
+  config: classpath:log4j2.xml
 
 spring:
   application:
     name: user
+  profiles:
+    active: user1
   jpa:
     generate-ddl: false
     show-sql: true
@@ -14,17 +17,23 @@ spring:
     schema: classpath:schema.sql
     data: classpath:data.sql
 
-logging:
-  level:
-    root: info
-    org.hibernate: info
-    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
-    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-
 eureka:
 #  instance:
 #    lease-renewal-interval-in-seconds: 租期更新时间，默认30s
 #    lease-expiration-duration-in-seconds: 租期到期时间，默认90s
+  instance:
+      prefer-ip-address: true
   client:
     serviceUrl:
       defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
+
+---
+spring:
+  profiles: user1
+server:
+  port: 8000
+---
+spring:
+  profiles: user2
+server:
+  port: 8001

@@ -5,6 +5,10 @@ spring:
 server:
   port: 8010
 
+#log
+logging:
+  config: classpath:log4j2.xml
+
 #RestTemplate
 rest:
   read :
@@ -12,7 +16,7 @@ rest:
   connect :
     timeout: 15000
 user:
-  serviceUrl: http://localhost:8000/
+  serviceUrl: http://user/
 
 eureka:
 #  instance:
