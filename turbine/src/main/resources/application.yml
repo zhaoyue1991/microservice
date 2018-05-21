@@ -1,0 +1,17 @@
+server:
+  port: 8031
+spring:
+  application:
+    name: turbine
+eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: \u79DF\u671F\u66F4\u65B0\u65F6\u95F4\uFF0C\u9ED8\u8BA430s
+#    lease-expiration-duration-in-seconds: \u79DF\u671F\u5230\u671F\u65F6\u95F4\uFF0C\u9ED8\u8BA490s
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
+turbine:
+  app-config: movie
+  cluster-name-expression: "'default'"
