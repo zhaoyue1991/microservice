@@ -3,6 +3,11 @@ spring:
     name: movie
   profiles:
     active: stage1
+  rabbitmq:
+    addresses: 10.20.9.92:5673, 10.20.9.92:5674, 10.20.9.92:5672
+    username: ticket
+    password: 123456
+    virtual-host: /ticket
 
 #log
 logging:

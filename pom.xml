@@ -11,6 +11,8 @@
         <module>eureka</module>
         <module>user</module>
         <module>movie</module>
+        <module>turbine</module>
+        <module>dashboard</module>
     </modules>
     <packaging>pom</packaging>
     <description>微服务</description>

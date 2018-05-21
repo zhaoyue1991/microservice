@@ -3,6 +3,16 @@ server:
 spring:
   application:
     name: turbine
+  rabbitmq:
+    addresses: 10.20.9.92:5673, 10.20.9.92:5674, 10.20.9.92:5672
+    username: ticket
+    password: 123456
+    virtual-host: /ticket
+
+#log
+logging:
+  config: classpath:log4j2.xml
+
 eureka:
 #  instance:
 #    lease-renewal-interval-in-seconds: \u79DF\u671F\u66F4\u65B0\u65F6\u95F4\uFF0C\u9ED8\u8BA430s
@@ -12,6 +22,3 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
-turbine:
-  app-config: movie
-  cluster-name-expression: "'default'"
