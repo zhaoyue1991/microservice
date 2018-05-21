@@ -20,8 +20,8 @@ user:
 
 eureka:
 #  instance:
-#    lease-renewal-interval-in-seconds: ×âÆÚ¸üĞÂÊ±¼ä£¬Ä¬ÈÏ30s
-#    lease-expiration-duration-in-seconds: ×âÆÚµ½ÆÚÊ±¼ä£¬Ä¬ÈÏ90s
+#    lease-renewal-interval-in-seconds: ç§ŸæœŸæ›´æ–°æ—¶é—´ï¼Œé»˜è®¤30s
+#    lease-expiration-duration-in-seconds: ç§ŸæœŸåˆ°æœŸæ—¶é—´ï¼Œé»˜è®¤90s
   instance:
     prefer-ip-address: true
   client:

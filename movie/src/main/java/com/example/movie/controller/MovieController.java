@@ -1,6 +1,7 @@
 package com.example.movie.controller;
 
 import com.example.movie.entity.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import lombok.extern.log4j.Log4j2;
 
@@ -18,7 +19,7 @@ import java.util.List;
 
 @RestController
 @Log4j2
-public class UserController {
+public class MovieController {
 
   @Autowired
   private RestTemplate restTemplate;
@@ -32,9 +33,14 @@ public class UserController {
   @Value("${user.serviceUrl}")
   private String userServiceUrl;
 
-  @GetMapping("/{id}")
-  public User fingById(@PathVariable Long id) {
+  @HystrixCommand(fallbackMethod = "findByIdFallback")
+  @GetMapping("/find/{id}")
+  public User findById(@PathVariable Long id) {
     return this.restTemplate.getForObject(this.userServiceUrl + id, User.class);
+  }
+
+  public User findByIdFallback(Long id) {
+    return User.builder().id(-1L).name("默认用户").build();
   }
 
   @GetMapping("/user-instance")
