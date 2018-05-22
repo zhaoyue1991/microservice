@@ -20,7 +20,7 @@ rest:
   connect :
     timeout: 15000
 user:
-  serviceUrl: http://user/
+  serviceUrl: http://zuul/user/
 
 eureka:
 #  instance:

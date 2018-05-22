@@ -13,6 +13,7 @@
         <module>movie</module>
         <module>turbine</module>
         <module>dashboard</module>
+        <module>zuul</module>
     </modules>
     <packaging>pom</packaging>
     <description>微服务</description>

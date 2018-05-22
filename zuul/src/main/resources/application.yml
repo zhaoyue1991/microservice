@@ -1,0 +1,57 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: zuul
+eureka:
+#  instance:
+#    lease-renewal-interval-in-seconds: \u79DF\u671F\u66F4\u65B0\u65F6\u95F4\uFF0C\u9ED8\u8BA430s
+#    lease-expiration-duration-in-seconds: \u79DF\u671F\u5230\u671F\u65F6\u95F4\uFF0C\u9ED8\u8BA490s
+  instance:
+      prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://stage1:9000/eureka/,http://stage2:9001/eureka/
+
+#zuul:
+##  \u6620\u5C04\u8DEF\u5F84
+#  routes:
+#    user: /user/**
+##  \u5FFD\u7565\u670D\u52A1
+#  ignored-services: user
+
+#\u53EA\u8DEF\u7531user
+#zuul:
+#  ignored-services: '*'
+#  routes: user: /user/**
+
+#\u540C\u65F6\u914D\u7F6Epath\u548Curl
+#zuul:
+#  routes:
+#    url: http://localhost:8000/
+#    path: /user/**
+
+#\u8DEF\u7531\u524D\u7F00\uFF0C\u81EA\u52A8\u52A0\u4E0A/api
+#zuul:
+#  prefix: /api
+#  strip-prefix: false
+#  routes: user: /user/**
+
+#\u5FFD\u7565/admin\uFF0C\u8DEF\u5F84\u6620\u5C04\u5230/user/**
+#zuul:
+#  ignored-patterns: /**/admin/**
+#  routes: user: /user/**
+
+#\u8BBE\u7F6E\u654F\u611Fheader\uFF0C\u654F\u611Fheader\u4E0D\u4F20\u9012
+#zuul:
+#  routes:
+#    user:
+#      path: /user/**
+#      sensitive-headers:
+#\u5168\u5C40
+#zuul:
+#  sensitive-headers: Cookie,Set-Cookie,Authorization #\u9ED8\u8BA4
+
+#\u5FFD\u7565header
+#zuul:
+#  ignored-headers:
